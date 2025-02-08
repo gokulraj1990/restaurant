@@ -20,5 +20,7 @@ This is a Django-based restaurant project that allows users to register, login, 
 
 ### 1. Clone the Repository
 ```bash
-git clone https://github.com/yourusername/restaurant-api.git
+git clone https://github.com/yourusername/restaurant.git
 cd restaurant-api
+docker-compose build
+docker-compose up

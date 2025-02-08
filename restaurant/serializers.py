@@ -18,18 +18,11 @@ class FoodItemSerializer(serializers.ModelSerializer):
         model = FoodItem
         fields = '__all__'
 
-# class OrderSerializer(serializers.ModelSerializer):
-#     class Meta:
-#         model = Order
-#         fields = '__all__'
-
-
 
 class OrderSerializer(serializers.ModelSerializer):
     # Calculate total_price using a SerializerMethodField
     total_price = serializers.SerializerMethodField()
     customer = serializers.PrimaryKeyRelatedField(read_only=True)  # Automatically set customer
-    status = serializers.CharField(default='pending')  # Default value for status
 
     class Meta:
         model = Order

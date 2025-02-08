@@ -134,10 +134,10 @@ class RestaurantAPITestCase(APITestCase):
         self.authenticate(self.customer_user)
         order = Order.objects.create(customer=self.customer_user, status="Pending", total_price=20.0)
         self.authenticate(self.admin_user)
-        data = {"status": "Completed"}
+        data = {"status": "completed"}
         response = self.client.patch(f"/api/orders/{order.id}/", data, format="json")
         self.assertEqual(response.status_code, status.HTTP_200_OK)
-        self.assertEqual(response.data["status"], "Completed")
+        self.assertEqual(response.data["status"], "completed")
 
     # ✅ AI-POWERED RECOMMENDATION TEST
     def test_get_recommendations(self):

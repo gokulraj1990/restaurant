@@ -12,21 +12,15 @@ Prerequisites
 - Python 3.9+
 - PostgreSQL
 
-1. Clone the Repository
-```bash
+1. Clone the Repository & Start Docker
 git clone https://github.com/gokulraj1990/restaurant.git
 cd restaurant-api
-docker-compose build
-docker-compose up
-```
+docker-compose up --build -d  # Build and run in detached mode
 
-2. Docker Setup
-```bash
-docker-compose up --build -d
-docker ps
+2. Run Migrations & Create Superuser
 docker exec -it restaurant-web python manage.py migrate
 docker exec -it restaurant-web python manage.py createsuperuser
-```
+
 Superuser Details:
 • Username: admin
 • Email: admin@example.com
